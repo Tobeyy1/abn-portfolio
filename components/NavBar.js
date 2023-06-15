@@ -50,7 +50,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className={classes.container}>
+    <nav className={classes.container} role={"navigation"}>
       <p className={classes.name}>
         {pathName === "/"
           ? "Chinonso Nwangwu"
