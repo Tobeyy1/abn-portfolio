@@ -1,0 +1,113 @@
+.container {
+  position: fixed;
+  top: 0px;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: #000;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* background-color: red; */
+  animation-name: carousel__slideIn, carousel__slideOut;
+  animation-delay: 0s, 2.5s;
+  animation-fill-mode: forwards, forwards;
+  animation-duration: 2s, 2s;
+  animation-timing-function: ease-in-out, ease-in-out;
+}
+
+.image__container {
+  position: relative;
+  width: 15vw;
+  height: 20vw;
+  /* overflow: hidden; */
+}
+
+@media (orientation: portrait) and (max-width: 500px) {
+  .carousel {
+    width: fit-content;
+  }
+  .image__container {
+    position: relative;
+    width: 30vw;
+    height: 40vw;
+    /* overflow: hidden; */
+  }
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  animation-name: scaleIn, scaleOut;
+  animation-delay: 0s, 2.5s;
+  animation-fill-mode: forwards, forwards;
+  animation-duration: 2s, 2s;
+  animation-timing-function: ease-in-out, ease-in-out;
+}
+
+.name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.5rem, 7vw, 10rem);
+}
+
+.welcome__exit__animation {
+  animation: moveName 0.5s 4.5s ease-in-out forwards;
+}
+
+@keyframes carousel__slideIn {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes carousel__slideOut {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes scaleOut {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.2;
+  }
+}
+
+@keyframes moveName {
+  to {
+    font-size: clamp(2rem, 3vw, 4rem);
+    left: 2rem;
+    top: 5.55rem;
+    transform: translate(-0%, -0%);
+  }
+}

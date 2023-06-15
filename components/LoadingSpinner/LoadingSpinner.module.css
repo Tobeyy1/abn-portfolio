@@ -1,0 +1,105 @@
+.loader {
+  --cell-size: 52px;
+  --cell-spacing: 1px;
+  --cells: 3;
+  --total-size: calc(
+    var(--cells) * (var(--cell-size) + 2 * var(--cell-spacing))
+  );
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--total-size);
+  height: var(--total-size);
+}
+
+.cell {
+  flex: 0 0 var(--cell-size);
+  margin: var(--cell-spacing);
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 4px;
+  animation: 1.5s ripple ease infinite;
+}
+
+.cell__d__one {
+  animation-delay: 100ms;
+}
+
+.cell__d__two {
+  animation-delay: 200ms;
+}
+
+.cell__d__three {
+  animation-delay: 300ms;
+}
+
+.cell__d__four {
+  animation-delay: 400ms;
+}
+
+.cell:nth-child(1) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(2) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(3) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(4) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(5) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(6) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(7) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(8) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+.cell:nth-child(9) {
+  --cell-color: #000;
+  border: 1px solid #fff;
+}
+
+/*Animation*/
+@keyframes ripple {
+  0% {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  30% {
+    background-color: var(--cell-color);
+    border-color: #fff;
+  }
+
+  60% {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  100% {
+    background-color: transparent;
+    border-color: transparent;
+  }
+}

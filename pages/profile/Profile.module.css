@@ -1,0 +1,260 @@
+.container {
+  --purple: #c4a5cf;
+  display: grid;
+  grid-auto-rows: 100%;
+  /* height: 100vh;
+  height: 100dvh; */
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior-block: contain;
+  scroll-snap-type: block mandatory;
+  overflow-x: hidden;
+  /* scroll-padding-block: 1rem; */
+}
+
+.container > section {
+  /* border: 1px solid #fff; */
+  scroll-snap-align: start;
+}
+
+.container > section > section {
+  width: 100%;
+  height: 100%;
+}
+
+.introduction {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  /* align-items: center; */
+  isolation: isolate;
+}
+
+.introduction > .image__container {
+  position: absolute;
+  width: clamp(300px, 50%, 50%);
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  /* opacity: 0.01; */
+  z-index: -1;
+}
+
+.introduction > div:not(.image__container) {
+  width: 70%;
+  font-size: clamp(2rem, 6vw, 9rem);
+  margin-left: clamp(2rem, 6vw, 9rem);
+  margin-bottom: clamp(2rem, 6vh, 9rem);
+}
+
+.introduction > div > p {
+  overflow: hidden;
+}
+
+.introduction > div > p > span {
+  display: flex;
+  gap: clamp(1rem, 2vw, 9rem);
+  color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+  .introduction {
+    flex-direction: column;
+    align-items: flex-start;
+    /* max-width: 100vw; */
+  }
+  .introduction > .image__container {
+    position: relative;
+    width: 100%;
+    min-width: none;
+  }
+  .introduction > div:not(.image__container) {
+    width: 90%;
+    font-size: clamp(1.5rem, 6vw, 9rem);
+  }
+}
+
+.image__container > .image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.past {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.past > p {
+  /* font-size: clamp(1rem, 4vw, 4rem); */
+  width: clamp(260px, 60%, 60%);
+  font-size: clamp(1rem, 3vw, 4rem);
+  padding: 1rem;
+}
+
+.past > p > span {
+  position: relative;
+}
+
+.past > p > span > div {
+  content: "";
+  position: absolute;
+  top: 100%;
+  height: 3px;
+  width: 100%;
+  left: 0px;
+  background: var(--purple);
+}
+
+.experience {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding-inline: 3vw;
+}
+
+.experience > span {
+  width: 40%;
+  display: grid;
+  place-content: center;
+  font-size: clamp(2rem, 15vw, 40rem);
+  color: var(--purple);
+  /* color: #000;
+  text-shadow: -1px 0 var(--purple), 0 1px var(--purple), 1px 0 var(--purple),
+    0 -1px var(--purple); */
+}
+
+.experience > p {
+  width: clamp(260px, 60%, 60%);
+
+  font-size: clamp(1rem, 2vw, 4rem);
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .experience {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .experience > span {
+    font-size: 35vw;
+  }
+}
+
+.inspiration {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-inline: 3vw;
+}
+
+.inspiration > p {
+  font-size: clamp(1rem, 2vw, 4rem);
+  text-align: center;
+  width: clamp(260px, 60%, 60%);
+}
+
+.portfolio {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-inline: 3vw;
+}
+
+.portfolio > p {
+  font-size: clamp(1rem, 2vw, 4rem);
+  text-align: center;
+  width: clamp(260px, 60%, 60%);
+}
+
+.future__outlook {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding-inline: 3vw;
+}
+
+.future__outlook > p {
+  font-size: clamp(1rem, 2vw, 4rem);
+  text-align: center;
+  width: clamp(260px, 60%, 60%);
+}
+
+.contact {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lets__talk {
+  /* flex: 1; */
+  /* margin: auto; */
+  display: flex;
+  font-size: clamp(3rem, 6vw, 9rem);
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.lets__talk > p {
+  display: flex;
+  gap: 1rem;
+  color: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.lets__talk > span:not(.underline) {
+  background-color: #000;
+  display: inline;
+  display: grid;
+  place-content: center;
+  border-radius: 999px;
+  width: clamp(5rem, 9vw, 9vw);
+  aspect-ratio: 1;
+  animation: shake 1s infinite ease-in-out;
+}
+
+.lets__talk > p > .underline {
+  position: absolute;
+  content: "";
+  bottom: 10%;
+  left: 0%;
+  width: 0%;
+  height: 4px;
+  background-color: #000;
+}
+
+@keyframes shake {
+  0% {
+    rotate: 0deg;
+  }
+  30% {
+    rotate: -30deg;
+  }
+  60% {
+    rotate: 30deg;
+  }
+  70% {
+    rotate: -15deg;
+  }
+  80% {
+    rotate: 15deg;
+  }
+  90% {
+    rotate: -7.5deg;
+  }
+  95% {
+    rotate: 7.5deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}

@@ -1,0 +1,158 @@
+.container {
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  align-content: center;
+  justify-content: space-between;
+  flex: 0;
+  position: relative;
+}
+
+.name {
+  opacity: 0.5;
+  font-style: italic;
+  padding: 2rem;
+  z-index: 31;
+  cursor: default;
+}
+
+.cart__toggler {
+  position: relative;
+  align-self: center;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  cursor: pointer;
+}
+.cart__item__count {
+  position: absolute;
+  top: 0%;
+  left: 100%;
+  font-size: clamp(0.5rem, 0.5vw, 1rem);
+  background-color: #fff;
+  color: black;
+  border: 2px solid #000;
+  height: clamp(1rem, 1vw, 1.5rem);
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+}
+
+.menu__toggler {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding-right: 2rem;
+  font-size: clamp(1.5rem, 1vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  cursor: pointer;
+  mix-blend-mode: difference;
+  z-index: 31;
+}
+
+.menu__toggler > div {
+  /* background-color: pink; */
+  overflow: hidden;
+  color: #fff;
+}
+
+.list__container {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  background-color: transparent;
+  z-index: 30;
+  display: flex;
+}
+
+.black__link__list {
+  /* border-block: 1px solid #fff; */
+  width: 50%;
+  background-color: #000;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 5vw;
+  overflow: hidden;
+}
+
+.black__link__list > .list__item {
+  font-size: clamp(1rem, 5vw, 4rem);
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+}
+.white__link__list {
+  width: 50%;
+  background-color: #fff;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 5vw;
+  overflow: hidden;
+}
+
+.white__link__list > .list__item {
+  font-size: clamp(1rem, 5vw, 4rem);
+  font-weight: 700;
+  cursor: pointer;
+  color: #000;
+
+  position: relative;
+}
+
+.list__item::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 0%;
+  height: 2px;
+  left: 0px;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  border-radius: 50px;
+  transition: width 250ms ease-in-out;
+}
+
+.white__link__list > .list__item::after {
+  background-color: #000;
+  height: 3px;
+  border-radius: 50px;
+}
+
+.list__item:hover::after {
+  width: 100%;
+}
+
+@media (orientation: portrait) and (max-width: 500px) {
+  .list__container {
+    flex-direction: column;
+  }
+  .black__link__list {
+    width: 100%;
+    height: 50%;
+  }
+  .white__link__list {
+    width: 100%;
+    height: 50%;
+    align-items: flex-end;
+  }
+  .black__link__list > .list__item,
+  .white__link__list > .list__item {
+    font-size: clamp(2rem, 6vw, 5rem);
+  }
+
+  .list__item::after {
+    width: 100%;
+  }
+}
